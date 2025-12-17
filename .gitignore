@@ -1,0 +1,12 @@
+Präsentation.pages
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+*.log   
+
+dist/
+build/
+.env        
+
+cgi_automation_challenge.pdf
