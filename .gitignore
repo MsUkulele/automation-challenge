@@ -4,9 +4,15 @@ Präsentation.pages
 .vscode/
 node_modules/
 *.log   
+cgi_challenge.pdf
+
 
 dist/
 build/
 .env        
 
 cgi_automation_challenge.pdf
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local       

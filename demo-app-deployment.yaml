@@ -2,27 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-deployment
-  namespace: demo-app
+  namespace: demo-ns
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello
+      app: demo-app
   template:
     metadata:
       labels:
-        app: hello
+        app: demo-app
     spec:
-     affinity:
+      affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
             - weight: 100
               podAffinityTerm:
                 labelSelector:
                   matchLabels:
-                    app: myapp
+                    app: demo-app
                 topologyKey: kubernetes.io/hostname
-    containers:
+      containers:
         - name: hello-container
           image: nginxdemos/hello
           ports:
@@ -34,5 +34,3 @@ spec:
             limits:
               cpu: "500m"
               memory: "512Mi"
-
-
