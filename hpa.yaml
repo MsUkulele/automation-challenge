@@ -1,14 +1,15 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: myapp-hpa
+  name: demo-hpa
+  namespace: demo-ns
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: myapp
+    name: demo-deployment
   minReplicas: 2
-  maxReplicas: 10
+  maxReplicas: 2
   metrics:
     - type: Resource
       resource:

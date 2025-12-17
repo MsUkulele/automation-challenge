@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-deployment
+  name: demo-deployment
   namespace: demo-ns
 spec:
   replicas: 3
@@ -34,3 +34,12 @@ spec:
             limits:
               cpu: "500m"
               memory: "512Mi"
+        - name: hello
+          image: nginxdemos/hello
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+    
