@@ -13,7 +13,8 @@ k3d cluster create "$CLUSTER_NAME" \
   --servers 1 \
   --agents 2 \
   --registry-create "${REGISTRY_NAME}:0.0.0.0:${REGISTRY_PORT}" \
-  -p "8080:80@loadbalancer"
+  -p "8080:80@loadbalancer" \
+  -p "8443:443@loadbalancer"
 
 echo ">>> Cluster created successfully."
 echo ">>> Registry on host: 127.0.0.1:${REGISTRY_PORT}"

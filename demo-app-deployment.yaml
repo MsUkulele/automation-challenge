@@ -23,7 +23,7 @@ spec:
                     app: demo-app
                 topologyKey: kubernetes.io/hostname
       containers:
-        - name: hello-container
+        - name: demo-container
           image: nginxdemos/hello
           ports:
             - containerPort: 80
@@ -34,12 +34,4 @@ spec:
             limits:
               cpu: "500m"
               memory: "512Mi"
-        - name: hello
-          image: nginxdemos/hello
-          ports:
-            - containerPort: 80
-          resources:
-            requests:
-              cpu: "200m"
-              memory: "256Mi"
     
